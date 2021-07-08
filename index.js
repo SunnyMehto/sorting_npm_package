@@ -129,10 +129,50 @@ function _insertionSort(array)
 }
 // INSERTION SORT - END
 
+// HEAP SORT - START
+function _heapSort(array)
+{
+    let arrLen = array.length;
+    for(var i=Math.floor(arrLen/2)-1 ; i >= 0; i--)
+    {
+        heapify(array,arrLen,i);
+    }
+    for (var i = arrLen - 1; i > 0; i--) {
+        var temp = array[0];
+        array[0] = array[i];
+        array[i] = temp;
+        heapify(array, i, 0);
+    }
+    return array;
+}
+
+function heapify(array, arrLen, i)
+{
+    var largest = i; 
+    var l = 2 * i + 1; 
+    var r = 2 * i + 2;
+
+    if (l < arrLen && array[l] > array[largest])
+        largest = l;
+
+    if (r < arrLen && array[r] > array[largest])
+        largest = r;
+
+    if (largest != i) {
+        var temp = array[i];
+        array[i] = array[largest];
+        array[largest] = temp;
+        heapify(array, arrLen, largest);
+    }
+}
+
+// HEAP SORT - END
+
 module.exports = {
 	mergeSort: _mergeSort,
 	quickSort: _quickSort,
 	bubbleSort: _bubbleSort,
     selectionSort:_selectionSort,
-    insertionSort:_insertionSort
+    insertionSort:_insertionSort,
+    heapSort:_heapSort
 };
