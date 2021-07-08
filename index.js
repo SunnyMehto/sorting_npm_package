@@ -102,15 +102,37 @@ function _selectionSort(array)
             array[min] = array[i];
             array[i] = temp;
         }
-        console.log('array',array);
     }
     return array;
 }
 // SELECTION SORT - END
 
+// INSERTION SORT - START
+function _insertionSort(array)
+{
+    let postionToInsert;
+    let valueToInsert;
+    let arrLen = array.length;
+    for(var i=1; i < arrLen; i++)
+    {
+        valueToInsert = array[i];
+        postionToInsert = i;
+        
+        while(postionToInsert > 0 && array[postionToInsert-1] > valueToInsert)
+        {
+            array[postionToInsert] = array[postionToInsert-1];
+            postionToInsert = postionToInsert-1;
+        }
+        array[postionToInsert] = valueToInsert;
+    }
+    return array;
+}
+// INSERTION SORT - END
+
 module.exports = {
 	mergeSort: _mergeSort,
 	quickSort: _quickSort,
 	bubbleSort: _bubbleSort,
-    selectionSort:_selectionSort
+    selectionSort:_selectionSort,
+    insertionSort:_insertionSort
 };
