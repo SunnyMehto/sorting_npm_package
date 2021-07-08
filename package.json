@@ -1,0 +1,22 @@
+{
+  "name": "sorting_npm_package",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunnyMehto/sorting_npm_package.git"
+  },
+  "keywords": [
+    "SunnyMehto"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunnyMehto/sorting_npm_package/issues"
+  },
+  "homepage": "https://github.com/SunnyMehto/sorting_npm_package#readme"
+}
