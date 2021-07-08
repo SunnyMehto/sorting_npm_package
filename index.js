@@ -72,7 +72,7 @@ function _bubbleSort(array)
                 let temp;
                 temp = array[j];
                 array[j] = array[j+1];
-                array[j+1] = temp
+                array[j+1] = temp;
             }
             //console.log('step->',array);
         }
@@ -81,8 +81,36 @@ function _bubbleSort(array)
 }
 // BUBBLE SORT - END
 
+// SELECTION SORT - START
+function _selectionSort(array)
+{
+    let arrLen = array.length;
+    for(var i=0; i < arrLen; i++)
+    {
+        let min = i;
+        for(var j=i+1; j < arrLen; j++)
+        {
+            if(array[j] < array[min])
+            {
+                min = j;
+            }
+        }  
+        if(min != i)
+        {
+            let temp;
+            temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+        console.log('array',array);
+    }
+    return array;
+}
+// SELECTION SORT - END
+
 module.exports = {
 	mergeSort: _mergeSort,
 	quickSort: _quickSort,
-	bubbleSort: _bubbleSort
+	bubbleSort: _bubbleSort,
+    selectionSort:_selectionSort
 };
